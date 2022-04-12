@@ -12,6 +12,7 @@ _Projet scolaire Dev 2022_
     - [Explication du projet Gatcha / Autobattler :](#explication-du-projet-gatcha--autobattler-)
     - [Diagramme UML](#diagramme-uml)
     - [Code First](#code-first)
+    - [Point d'entrée dans le projet](#point-dentrée-dans-le-projet)
 
 ## 🚀 Initialisation du projet
 
@@ -74,3 +75,7 @@ https://lucid.app/lucidchart/ba20625b-2ae6-41d8-b6c5-4e794edd410d/edit?invitatio
 
 Pour le projet nous décidons de partir sur une approche **"Code First"**.
 Nous allons donc créer les classes correspondantes à nos Models de données et créer des relations entre elle avec des données tempons.
+
+### Point d'entrée dans le projet
+
+Le point d'entrée sera la page : Créer un groupe de héro.
