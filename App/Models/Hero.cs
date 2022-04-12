@@ -10,5 +10,6 @@ namespace App.Models
         public int Armor { get; set; }
         public int MagicResistance { get; set; }
         public int Crit { get; set; }
+        //test
     }
 }
