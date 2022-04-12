@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  db:
+    container_name: gatcha-db
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    ports:
+      - 3306:3306
+    volumes:
+      - ./database:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: my_password
+      MYSQL_USER: db_user
+      MYSQL_PASSWORD: example
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8080:80
+    depends_on:
+      - db
+
+volumes:
+  database:
