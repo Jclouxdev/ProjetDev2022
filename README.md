@@ -79,3 +79,8 @@ Nous allons donc créer les classes correspondantes à nos Models de données et
 ### Point d'entrée dans le projet
 
 Le point d'entrée sera la page : Créer un groupe de héro.
+
+Sprint :
+
+- [ ] Récupérer une liste de 10 héros
+- [ ] Afficher les 10 héros sur la page de création de groupe
