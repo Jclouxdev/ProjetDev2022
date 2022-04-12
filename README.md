@@ -82,5 +82,7 @@ Le point d'entrée sera la page : Créer un groupe de héro.
 
 Sprint :
 
+- [ ] Créer la page "Créer le groupe"
+- [ ] Ajouter de la naviguation vers la page
 - [ ] Récupérer une liste de 10 héros
 - [ ] Afficher les 10 héros sur la page de création de groupe
