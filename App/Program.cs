@@ -1,7 +1,21 @@
+using App.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+var connectionString = "server=localhost;user=root;password=my_password;database=DB-Gatcha";
+var serverVersion = new MySqlServerVersion(new Version(8, 0, 27));
+
+builder.Services.AddDbContext<AppDbContext>(
+  dbContextOptions => dbContextOptions
+    .UseMySql(connectionString, serverVersion)
+    .LogTo(Console.WriteLine, LogLevel.Information)
+    .EnableSensitiveDataLogging()
+    .EnableDetailedErrors()
+);
 
 var app = builder.Build();
 
@@ -23,5 +37,10 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+using (var scope = app.Services.CreateScope())
+{
+  scope.ServiceProvider.GetRequiredService<AppDbContext>().Database.EnsureCreated();
+}
 
 app.Run();
