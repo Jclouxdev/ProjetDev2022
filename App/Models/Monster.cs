@@ -11,5 +11,12 @@ namespace App.Models
         public int MagicResistance { get; set; }
         public int Crit { get; set; }
         // test
+        public void TakeDamage(int damage){
+            if(Health-damage < 0 ){
+                Health-=damage;
+            } else {
+                Health = 0;
+            }
+        }
     }
 }
