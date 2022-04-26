@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   db:
-    container_name: gatcha-db
+    container_name: DB-Gatcha
     image: mysql
     command: --default-authentication-plugin=mysql_native_password
     restart: always

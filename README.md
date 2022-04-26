@@ -10,6 +10,9 @@ _Projet scolaire Dev 2022_
     - [📅 Dates :](#-dates-)
     - [Idées de projets :](#idées-de-projets-)
     - [Explication du projet Gatcha / Autobattler :](#explication-du-projet-gatcha--autobattler-)
+    - [Diagramme UML](#diagramme-uml)
+    - [Code First](#code-first)
+    - [Point d'entrée dans le projet](#point-dentrée-dans-le-projet)
 
 ## 🚀 Initialisation du projet
 
@@ -64,6 +67,25 @@ Un jeu où on a des persos / cartes avec des statistiques définies. Un système
 | 3              | GUI Fonctionnelle                                      |
 | **Total : 33** | 🎉                                                     |
 
-Diagramme UML
+### Diagramme UML
 
 https://lucid.app/lucidchart/ba20625b-2ae6-41d8-b6c5-4e794edd410d/edit?invitationId=inv_13cb8111-dd2e-45eb-8264-245a8df27aba
+
+### Code First
+
+Pour le projet nous décidons de partir sur une approche **"Code First"**.
+Nous allons donc créer les classes correspondantes à nos Models de données et créer des relations entre elle avec des données tempons.
+
+### Point d'entrée dans le projet
+
+Le point d'entrée sera la page : Créer un groupe de héro.
+
+Sprint :
+
+En premier : Mettre en place l'ORM (EntityFramework) avec la DB Docker
+
+- [ ] Créer la page "Créer le groupe"
+- [ ] Ajouter de la naviguation vers la page
+- [ ] Récupérer une liste de 10 héros
+- [ ] Afficher les 10 héros sur la page de création de groupe
+- [ ] (Possiblement) Mettre en place la gestion de compte
