@@ -1,6 +1,6 @@
 namespace App.Models
 {
-    public class Hero : IUnit
+    public interface IUnit
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -12,27 +12,15 @@ namespace App.Models
         public int CritRate { get; set; }
 
         public void TakeMagicalDamage(int damage){
-            if(Health-damage < 0 ){
-                Health-=damage;
-            } else {
-                Health = 0;
-            }
         }
 
         public void TakePhysicalDamage(int damage){
-            if(Health-damage < 0 ){
-                Health-=damage;
-            } else {
-                Health = 0;
-            }
         }
 
         public void NormalAttack(IUnit ennemy){
-            ennemy.TakePhysicalDamage(AttackDamage);
         }
 
         public void MagicAttack(IUnit ennemy){
-            ennemy.TakeMagicalDamage(AbilityPower);
         }
     }
 }
