@@ -16,14 +16,20 @@
                 <div class="hero-list__hero-card__hero-name">
                     <h2>@Html.DisplayFor(modelItem => item.Name)</h2>
                 </div>
-                <div class="hero-list__hero-card__hero-stats">
+                <div class="hero-list__hero-card__hero-role">
                     <p>@Html.DisplayFor(modelItem => item.Role)</p>
-                    <p>PV : @Html.DisplayFor(modelItem => item.Health)</p>
-                    <p>Dégats : @Html.DisplayFor(modelItem => item.AttackDamage)</p>
-                    <p>Puissance : @Html.DisplayFor(modelItem => item.AbilityPower)</p>
-                    <p>Armure : @Html.DisplayFor(modelItem => item.Armor)</p>
-                    <p>Resistance Magique : @Html.DisplayFor(modelItem => item.MagicResistance)</p>
-                    <p>Chances de critiques : @Html.DisplayFor(modelItem => item.CritRate)</p>
+                </div>
+                <div class="hero-list__hero-card__hero-stats">
+                    <div class="hero-list__hero-card__hero-stats__left">
+                        <p><img src="assets/icons/hearth.png"> @Html.DisplayFor(modelItem => item.Health)</p>
+                        <p><img src="assets/icons/sword.png"> @Html.DisplayFor(modelItem => item.AttackDamage)</p>
+                        <p><img src="assets/icons/magic-wand.png"> @Html.DisplayFor(modelItem => item.AbilityPower)</p>
+                    </div>
+                    <div class="hero-list__hero-card__hero-stats__right">
+                        <p><img src="assets/icons/armor.png"> @Html.DisplayFor(modelItem => item.Armor)</p>
+                        <p><img src="assets/icons/magic-resist.png"> @Html.DisplayFor(modelItem => item.MagicResistance)</p>
+                        <p><img src="assets/icons/crit.png"> @Html.DisplayFor(modelItem => item.CritRate)%</p>
+                    </div>
                 </div>
             </div>
         }
