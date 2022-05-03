@@ -1,16 +1,16 @@
-using App.Models;
-using Microsoft.EntityFrameworkCore;
+// using App.Models;
+// using Microsoft.EntityFrameworkCore;
 
-namespace App.Data;
+// namespace App.Data;
 
-public class AppDbContext : DbContext
-{
-    public DbSet<Driver>  { get; set; }
-    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
-    {
-    }
+// public class AppDbContext : DbContext
+// {
+//     public DbSet<Player> Player  { get; set; }
+//     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+//     {
+//     }
 
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-    }
-}
+//     protected override void OnModelCreating(ModelBuilder modelBuilder)
+//     {
+//     }
+// }

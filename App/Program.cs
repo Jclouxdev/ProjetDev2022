@@ -1,7 +1,12 @@
+using App.Data;
+using App.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScope<IPlayerRepository<Player>>, EFPlayerRepository();
 
 var app = builder.Build();
 
