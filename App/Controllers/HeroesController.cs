@@ -10,6 +10,8 @@ namespace App.Controllers
     public class HeroesController : Controller
     {
         // GET: Heroes
+        [HttpGet]
+        [Route("[controller]")]
         public ActionResult Index()
         {
             return View();
