@@ -82,6 +82,8 @@ Le point d'entrée sera la page : Créer un groupe de héro.
 
 Sprint :
 
+En premier : Mettre en place l'ORM (EntityFramework) avec la DB Docker
+
 - [ ] Créer la page "Créer le groupe"
 - [ ] Ajouter de la naviguation vers la page
 - [ ] Récupérer une liste de 10 héros
