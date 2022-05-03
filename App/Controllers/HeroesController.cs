@@ -4,7 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+
 using App.Data;
+using App.ViewModels;
 
 namespace App.Controllers
 {
@@ -16,8 +18,9 @@ namespace App.Controllers
         public ActionResult Index()
         {
             var heroes = HeroesRepoPattern.GetAllHeroes();
+            var heroList = new HeroListViewModel(heroes);
 
-            return View("Index", heroes);
+            return View("Index", heroList);
         }
 
         // GET: Heroes/Details/5
