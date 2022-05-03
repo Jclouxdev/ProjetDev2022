@@ -1,0 +1,23 @@
+.hero-list {
+  margin-top: 50px;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 4em;
+  justify-content: space-evenly;
+}
+
+.hero-list__hero-card__hero-asset img {
+  width: 70px;
+  height: 70px;
+}
+
+.hero-list__hero-card__hero-name h2 {
+  font-size: 1.2em;
+  margin: 1.2em;
+}
+
+.hero-list__hero-card__hero-stats p {
+  margin: 0em;
+}

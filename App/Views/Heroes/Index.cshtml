@@ -1,13 +1,31 @@
 ﻿@model App.ViewModels.HeroListViewModel
 
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Les héros";
 }
 
 <div class="text-center">
     <h1 class="display-4">Les héros</h1>
 
-    @foreach (var item in Model.HeroList) {
-        @Html.DisplayFor(modelItem => item.Name)
-    }
+    <div class="hero-list">
+            @foreach (var item in Model.HeroList) {
+            <div class="hero-list__hero-card">
+                <div class="hero-list__hero-card__hero-asset">
+                    <img src=@item.AssetLink>
+                </div>
+                <div class="hero-list__hero-card__hero-name">
+                    <h2>@Html.DisplayFor(modelItem => item.Name)</h2>
+                </div>
+                <div class="hero-list__hero-card__hero-stats">
+                    <p>@Html.DisplayFor(modelItem => item.Role)</p>
+                    <p>PV : @Html.DisplayFor(modelItem => item.Health)</p>
+                    <p>Dégats : @Html.DisplayFor(modelItem => item.AttackDamage)</p>
+                    <p>Puissance : @Html.DisplayFor(modelItem => item.AbilityPower)</p>
+                    <p>Armure : @Html.DisplayFor(modelItem => item.Armor)</p>
+                    <p>Resistance Magique : @Html.DisplayFor(modelItem => item.MagicResistance)</p>
+                    <p>Chances de critiques : @Html.DisplayFor(modelItem => item.CritRate)</p>
+                </div>
+            </div>
+        }
+    </div>
 </div>

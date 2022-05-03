@@ -19,7 +19,8 @@ namespace App.Data
                     AbilityPower = 30,
                     Armor = 25,
                     MagicResistance = 25,
-                    CritRate = 15
+                    CritRate = 15,
+                    AssetLink = "assets/cara/dps-human.gif"
                 },
                 new Hero()
                 {
@@ -31,7 +32,8 @@ namespace App.Data
                     AbilityPower = 30,
                     Armor = 50,
                     MagicResistance = 40,
-                    CritRate = 5
+                    CritRate = 5,
+                    AssetLink= "assets/cara/tank-human.gif"
                 },
                 new Hero()
                 {
@@ -43,7 +45,8 @@ namespace App.Data
                     AbilityPower = 50,
                     Armor = 35,
                     MagicResistance = 25,
-                    CritRate = 10
+                    CritRate = 10,
+                    AssetLink = "assets/cara/healer-fairy.gif"
                 },
             };
 
