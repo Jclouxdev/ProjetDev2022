@@ -11,6 +11,7 @@ namespace App.Models
         public int Armor { get; set; }
         public int MagicResistance { get; set; }
         public int CritRate { get; set; }
+        public string AssetLink { get; set; }
 
         public void TakeMagicalDamage(int damage){
             if(Health-damage < 0 ){
