@@ -12,7 +12,7 @@ namespace App.Data
                 new Monster()
                 {
                     Id = 1,
-                    Name = "Pruxyne",
+                    Name = "Crabix",
                     Role = "Dégats",
                     Health = 100,
                     AttackDamage = 50,
@@ -20,33 +20,33 @@ namespace App.Data
                     Armor = 25,
                     MagicResistance = 25,
                     CritRate = 15,
-                    AssetLink = "assets/cara/dps-human.gif"
+                    AssetLink = "assets/cara/crab.gif"
                 },
                 new Monster()
                 {
                     Id = 2,
-                    Name = "Kleomasose",
-                    Role = "Tank",
+                    Name = "Fantôme",
+                    Role = "Support",
                     Health = 200,
                     AttackDamage = 20,
                     AbilityPower = 30,
                     Armor = 50,
                     MagicResistance = 40,
                     CritRate = 5,
-                    AssetLink= "assets/cara/tank-human.gif"
+                    AssetLink= "assets/cara/ghost.gif"
                 },
                 new Monster()
                 {
                     Id = 3,
-                    Name = "Tiothya",
-                    Role = "Support",
+                    Name = "Orc",
+                    Role = "Tank",
                     Health = 120,
                     AttackDamage = 10,
                     AbilityPower = 50,
                     Armor = 35,
                     MagicResistance = 25,
                     CritRate = 10,
-                    AssetLink = "assets/cara/healer-fairy.gif"
+                    AssetLink = "assets/cara/orc.gif"
                 },
             };
 
