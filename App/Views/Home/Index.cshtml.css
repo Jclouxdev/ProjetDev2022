@@ -1,0 +1,44 @@
+.form {
+  width: 100%;
+  transform: translateY(50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form h1 {
+  font-weight: bold;
+}
+
+.form p {
+  max-width: 600px;
+  font-weight: lighter;
+  margin-bottom: 3em;
+}
+
+.form__buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+
+.form a.button {
+  display: block;
+  text-decoration: none;
+  padding: 0.8em 2em;
+  border-radius: 7px;
+  font-size: 0.9em;
+
+  cursor: pointer;
+}
+
+.form a.button.cta {
+  background: #f57c00;
+  color: white;
+}
+
+.form a.button.primary {
+  background: #212121;
+  color: white;
+}
