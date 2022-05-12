@@ -1,20 +1,17 @@
 namespace App.Models
 {
-    public class Monster : IUnit
+    public class Unit
     {
-       public int BossType { get; set; }
-       public int MyProperty { get; set; }
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Role { get; set; }
+        public int Mana { get; set; }
         public int Health { get; set; }
         public int AttackDamage { get; set; }
         public int AbilityPower { get; set; }
         public int Armor { get; set; }
         public int MagicResistance { get; set; }
-        public int CritRate { get; set; }
-        public string AssetLink { get; set; }
-
+        public int Crit { get; set; }
+        public List<Spell> SpellList { get; set; }
         public void TakeMagicalDamage(int damage){
             if(Health-damage < 0 ){
                 Health-=damage;
@@ -22,7 +19,6 @@ namespace App.Models
                 Health = 0;
             }
         }
-
         public void TakePhysicalDamage(int damage){
             if(Health-damage < 0 ){
                 Health-=damage;
@@ -30,13 +26,17 @@ namespace App.Models
                 Health = 0;
             }
         }
-
-        public void NormalAttack(IUnit ennemy){
+        public void NormalAttack(Unit ennemy){
             ennemy.TakePhysicalDamage(AttackDamage);
         }
-
-        public void MagicAttack(IUnit ennemy){
+        public void MagicAttack(Unit ennemy){
             ennemy.TakeMagicalDamage(AbilityPower);
+        }
+        public int UseSpell(int nbSpell){
+            if(SpellList.Count() > nbSpell){
+                return SpellList[nbSpell].Use();
+            }
+            return 5;
         }
     }
 }

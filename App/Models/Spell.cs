@@ -7,5 +7,8 @@ namespace App.Models
         public int Cost { get; set; }
         public int Physical { get; set; }
         public int Magical { get; set; }
+        public int Use(){
+            return 1;
+        }
     }
 }

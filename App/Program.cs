@@ -1,21 +1,27 @@
 using App.Data;
-using Microsoft.EntityFrameworkCore;
+using App.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-var connectionString = "server=localhost;user=root;password=my_password;database=DB-Gatcha";
-var serverVersion = new MySqlServerVersion(new Version(8, 0, 27));
+builder.Services.AddAuthentication("AuthCookie").AddCookie("AuthCookie", options => {
+  options.Cookie.Name = "AuthCookie";
+});
 
-builder.Services.AddDbContext<AppDbContext>(
-  dbContextOptions => dbContextOptions
-    .UseMySql(connectionString, serverVersion)
-    .LogTo(Console.WriteLine, LogLevel.Information)
-    .EnableSensitiveDataLogging()
-    .EnableDetailedErrors()
-);
+// var connectionString = "server=localhost;user=root;password=my_password;database=DB-Gatcha";
+// var serverVersion = new MySqlServerVersion(new Version(8, 0, 27));
+
+// builder.Services.AddDbContext<AppDbContext>(
+//   dbContextOptions => dbContextOptions
+//     .UseMySql(connectionString, serverVersion)
+//     .LogTo(Console.WriteLine, LogLevel.Information)
+//     .EnableSensitiveDataLogging()
+//     .EnableDetailedErrors()
+// );
+
+// builder.Services.AddScope<IPlayerRepository<Player>>, EFPlayerRepository();
 
 var app = builder.Build();
 
@@ -32,6 +38,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 // app.MapControllerRoute(
@@ -42,9 +49,9 @@ app.UseEndpoints(endpoints => {
   endpoints.MapControllers();
 });
 
-using (var scope = app.Services.CreateScope())
-{
-  scope.ServiceProvider.GetRequiredService<AppDbContext>().Database.EnsureCreated();
-}
+// using (var scope = app.Services.CreateScope())
+// {
+//   scope.ServiceProvider.GetRequiredService<AppDbContext>().Database.EnsureCreated();
+// }
 
 app.Run();
