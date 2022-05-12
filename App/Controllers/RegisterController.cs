@@ -8,11 +8,6 @@ namespace App.Controllers
 {
     public class RegisterController : Controller
     {
-        private readonly IPlayerRepository<Player> _playerRepository;
-        public RegisterController(IPlayerRepository<Player> playerRepository)
-        {
-            _playerRepository = playerRepository;
-        }
         // GET: Register
         [HttpGet]
         [Route("Register")]
@@ -30,14 +25,6 @@ namespace App.Controllers
             {
                 if(ModelState.IsValid){
                 // TODO: Add insert logic here
-                    if(!_playerRepository.AnyMail(player.Email)){
-                        Player newPlayer = new(){
-                            Email=player.Email,
-                            Password=player.Password
-                        };
-                        _playerRepository.Add(newPlayer);
-                        return Redirect("/");
-                    }
                 }
                 return View();
             }

@@ -1,4 +1,4 @@
-@model App.Models.Player
+@model App.ViewModels.LoginPlayerRequest
 @{
     ViewData["Title"] = "Login Page";
 }
@@ -8,21 +8,31 @@
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
     <h4>Login</h4>
     <div class="text-center">
-        <div class="col-md-4 text-center">
-            <div class="form-group">
-                <label asp-for"Name" class="control-label"></label>
-                <input asp-for"Name" class="form-control">
-                <span asp-validation-for"Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for"Password" class="control-label"></label>
-                <input asp-for"Password" class="form-control" type="password">
-                <span asp-validation-for"Password" class="text-danger"></span>
-            </div> 
-            <div class="form-group">
-                <input type="submit" value="Login" class="btn btn-primary">
-            </div>
-
-        </div>
+            <form method="post">
+                <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                <div class="form-group">
+                    <div class="col-2">
+                        <label asp-for="UserName"></label>
+                    </div>
+                    <div class="col-5">
+                        <input type="text" asp-for="UserName" class="form-control">
+                    </div>
+                    <span asp-validation-for="UserName" class="text-danger"></span>
+                </div>
+                 <div class="form-group">
+                    <div class="col-2">
+                        <label asp-for="Password"></label>
+                    </div>
+                    <div class="col-5">
+                        <input type="password" asp-for="Password" class="form-control">
+                    </div>
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <div class="col-1">
+                        <input type="submit" value="Login" class="btn btn-primary">
+                    </div>
+                </div>
+            </form>
     </div>
 </div>

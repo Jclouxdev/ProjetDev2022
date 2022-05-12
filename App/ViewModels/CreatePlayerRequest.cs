@@ -9,6 +9,10 @@ namespace App.ViewModels
         public string Email { get; set; }
 
         [Required]
+        [Display(Name="User Name")]
+        public string UserName { get; set; }
+
+        [Required]
         [MinLength(8)]
         [MaxLength(15)]
         // [RegularExpression(@"(?=.*\d)(?=.*[A-Z])", ErrorMessage = "Doit contenir au moins 1 Majuscule et 1 chiffre")]
