@@ -6,18 +6,26 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 using App.Data;
+using App.Models;
 using App.ViewModels;
 
 namespace App.Controllers
 {
     public class MonstersController : Controller
     {
+        private readonly IRepository<Monster> _monsterRepository;
+
+        public MonstersController(IRepository<Monster> monsterRepository)
+        {
+            _monsterRepository = monsterRepository;
+        }
+
         // GET: Monsters
         [HttpGet]
         [Route("[controller]")]
         public ActionResult Index()
         {
-            var monsters = MonstersRepoPattern.GetAllMonsters();
+            var monsters = _monsterRepository.GetAll();
             var monstersList = new MonstersListViewModel(monsters);
 
             return View("Index", monstersList);

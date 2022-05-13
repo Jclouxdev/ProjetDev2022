@@ -6,18 +6,26 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 using App.Data;
+using App.Models;
 using App.ViewModels;
 
 namespace App.Controllers
 {
     public class HeroesController : Controller
     {
+        private readonly IRepository<Hero> _heroRepository;
+
+        public HeroesController(IRepository<Hero> heroRepository)
+        {
+            _heroRepository = heroRepository;
+        }
+
         // GET: Heroes
         [HttpGet]
         [Route("[controller]")]
         public ActionResult Index()
         {
-            var heroes = HeroesRepoPattern.GetAllHeroes();
+            var heroes = _heroRepository.GetAll();
             var heroList = new HeroListViewModel(heroes);
 
             return View("Index", heroList);
