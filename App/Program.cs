@@ -9,6 +9,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IRepository<Hero>, EFHeroRepository>();
 builder.Services.AddScoped<IRepository<Monster>, EFMonsterRepository>();
+builder.Services.AddScoped<IPlayerRepository<Player>, EFPlayerRepository>();
 
 builder.Services.AddAuthentication("AuthCookie").AddCookie("AuthCookie", options => {
   options.Cookie.Name = "AuthCookie";

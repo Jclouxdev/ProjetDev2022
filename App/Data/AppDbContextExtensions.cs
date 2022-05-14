@@ -12,15 +12,19 @@ public static class AppDbContextExtensions
                 {
                     Id = 1,
                     Name = "admin",
-                    Password = "admin",
-                    Email = "admin@gmail.com"
+                    Password = "1JbyJVbugGEUUcyhC30HQzYpg+mKw9ictnskQ5kj3xk=",
+                    Email = "admin@gmail.com",
+                    Salt = "CYF+xPkgW5cd6RomOz/ZMfcfriIynxtrkZwNFIz+uT0=",
+                    CreationDate = DateTime.Now
                 },
                 new Player()
                 {
                     Id = 2,
                     Name = "player",
-                    Password = "player",
-                    Email = "player@gmail.com"
+                    Password = "KMkHYbtVl7chMP8iGx23/JwB6K1RFr6KTr06TewcgQ4=",
+                    Email = "player@gmail.com",
+                    Salt = "+XGMpKDHVVH1vm+bSxtYQeeXoydK4HL9gXShxGda/S8=",
+                    CreationDate = DateTime.Now
                 }
             };
             dbContext.Player.AddRange(players);
