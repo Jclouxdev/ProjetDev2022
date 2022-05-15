@@ -15,4 +15,7 @@ html {
 
 body {
   margin-bottom: 60px;
+  background-image: url("../assets/background/game-bg.jpeg");
+  background-size: cover;
+  background-attachment: fixed;
 }

@@ -4,36 +4,10 @@ h1 {
   font-weight: bold;
 }
 
-.background {
-  z-index: -4;
-  position: absolute;
-  top: 0;
-  left: 0;
-  max-width: 100vw;
-  max-height: 100vh;
-  overflow: hidden;
-}
-
-.background img {
-  width: 100%;
-}
-
-.screen {
-  z-index: -3;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-}
-
 .form {
   width: 300px;
   padding: 2em;
+  margin: 100px auto;
   background: white;
   border-radius: 7px;
   box-shadow: 10px 0 15px rgba(0, 0, 0, 0.5);

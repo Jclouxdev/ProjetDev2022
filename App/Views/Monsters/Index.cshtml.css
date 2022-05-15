@@ -8,13 +8,19 @@
   justify-content: space-evenly;
 }
 
+h1 {
+  color: whitesmoke;
+  font-weight: bold;
+  margin-top: 1em;
+}
+
 .hero-list__hero-card {
   width: 250px;
   padding: 30px 20px;
   border: 10px;
 
-  /* box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); */
-  background: #fff8e1;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  background: #f5f5f5;
   outline: 1px solid #fdf1ca;
   border-radius: 20px;
 }
