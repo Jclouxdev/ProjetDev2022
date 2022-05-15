@@ -4,8 +4,10 @@ namespace App.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int Type { get; set; }
+        public string Type { get; set; }
+        public int Damage { get; set; }
         public string Description { get; set; }
-        public int Effect { get; set; }
+        public string Effect { get; set; }
+        public string AssetLink { get; set; }
     }
 }
