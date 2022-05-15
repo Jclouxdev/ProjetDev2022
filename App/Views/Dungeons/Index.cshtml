@@ -7,17 +7,16 @@
 <div class="text-center">
     <h1 class="display-4">Les donjons journaliers</h1>
 
-    <div class="hero-list">
+    <div class="dungeon-list">
             @foreach (var item in Model.DungeonList) {
-            <div class="hero-list__hero-card">
-                <div class="hero-list__hero-card__hero-asset">
+            <div class="dungeon-list__dungeon-card">
+                <div class="dungeon-list__dungeon-card__asset">
                     <img src=@item.BgPic>
                 </div>
-                <div class="hero-list__hero-card__hero-name">
+                <div class="dungeon-list__dungeon-card__about">
                     <h2>@Html.DisplayFor(modelItem => item.Name)</h2>
-                </div>
-                <div class="hero-list__hero-card__hero-role">
-                    <p>@Html.DisplayFor(modelItem => item.Difficulty)</p>
+                    <p>Difficulté : @Html.DisplayFor(modelItem => item.Difficulty)</p>
+                    <a href="#" class="button">Rentrer</a>
                 </div>
             </div>
         }

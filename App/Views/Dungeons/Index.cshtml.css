@@ -1,0 +1,47 @@
+.dungeon-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 4em;
+}
+
+h1 {
+  font-weight: bold;
+  margin: 1em 0 2em 0;
+}
+
+.dungeon-list__dungeon-card {
+  max-width: 700px;
+  display: flex;
+  flex-direction: row;
+  border-radius: 10px;
+}
+
+.dungeon-list__dungeon-card__asset,
+.dungeon-list__dungeon-card__about {
+  width: 50%;
+}
+
+.dungeon-list__dungeon-card__about {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: left;
+  margin-left: 2em;
+}
+
+.dungeon-list__dungeon-card__about .button {
+  display: block;
+  background: #32a852;
+  color: white;
+  padding: 0.7em 0.7em;
+  text-align: center;
+  border-radius: 7px;
+  text-decoration: none;
+}
+
+.dungeon-list__dungeon-card img {
+  width: 100%;
+  border-radius: 10px;
+}
