@@ -9,6 +9,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IRepository<Dungeon>, EFDungeonRepository>();
 builder.Services.AddScoped<IRepository<Item>, EFItemRepository>();
+builder.Services.AddScoped<IRepository<Spell>, EFSpellRepository>();
 builder.Services.AddScoped<IRepository<Hero>, EFHeroRepository>();
 builder.Services.AddScoped<IRepository<Monster>, EFMonsterRepository>();
 builder.Services.AddScoped<IPlayerRepository<Player>, EFPlayerRepository>();
@@ -64,6 +65,7 @@ using (var scope = app.Services.CreateScope())
   scope.ServiceProvider.GetRequiredService<AppDbContext>().SeedMonster();
   scope.ServiceProvider.GetRequiredService<AppDbContext>().SeedPlayer();
   scope.ServiceProvider.GetRequiredService<AppDbContext>().SeedItem();
+  scope.ServiceProvider.GetRequiredService<AppDbContext>().SeedSpell();
 }
 
 app.Run();

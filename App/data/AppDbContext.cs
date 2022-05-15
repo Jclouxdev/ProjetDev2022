@@ -11,6 +11,7 @@ namespace App.Data
         public DbSet<Dungeon> Dungeon { get; set;}
         public DbSet<Item> Item {get; set;}
         public DbSet<Drop> Drop {get; set;}
+        public DbSet<Spell> Spell { get; set; }
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {

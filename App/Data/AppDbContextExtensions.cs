@@ -189,6 +189,42 @@ public static class AppDbContextExtensions
 
             };
             dbContext.Item.AddRange(items);
+        }
+    }
+
+    public static void SeedSpell(this AppDbContext dbContext){
+        if (!dbContext.Spell.Any()){
+            var spells = new List<Spell>()
+            {
+                new Spell()
+                {
+                    Id = 1,
+                    Name = "Ice",
+                    Cost = 10,
+                    Physical = 0,
+                    Magical = 50,
+                    AssetLink = "assets/spells/ice.png"
+                },
+                new Spell()
+                {
+                    Id = 2,
+                    Name = "Fire",
+                    Cost = 15,
+                    Physical = 0,
+                    Magical = 55,
+                    AssetLink= "assets/spells/fire.png"
+                },
+                new Spell()
+                {
+                    Id = 3,
+                    Name = "Wind",
+                    Cost = 10,
+                    Physical = 0,
+                    Magical = 45,
+                    AssetLink = "assets/spells/wind.png"
+                },
+            };
+            dbContext.Spell.AddRange(spells);
             dbContext.SaveChanges();
         }
     }
