@@ -9,5 +9,6 @@ namespace App.Data
         int Commit();
 
         void Delete(TModel model);
+        void Add(TModel model);
     }
 }

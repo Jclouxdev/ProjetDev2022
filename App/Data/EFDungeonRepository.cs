@@ -28,5 +28,8 @@ namespace App.Data
         public void Delete(Dungeon dungeon){
             _dbContext.Remove(dungeon);
         }
+        public void Add(Dungeon dungeon){
+            _dbContext.Add(dungeon);
+        }
     }
 }

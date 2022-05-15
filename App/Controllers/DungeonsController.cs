@@ -26,16 +26,19 @@ namespace App.Controllers
         public ActionResult Index(){
             Player player = _playerRepository.GetByUname(User.Identity.Name);
             List<Dungeon> dungeons = _dungeonRepository.GetAll();
-            List<Dungeon> playerDungeons = dungeons.FindAll(dungeon => dungeon.DungeonOwner == player);
+            List<Dungeon> playerDungeons = dungeons.FindAll(dungeon => dungeon.DungeonOwner == player && DateTime.Compare(dungeon.ExpirationDate,DateTime.Now) > 0);
             if(playerDungeons.Count == 0){
                 List<Item> items = _itemRepository.GetAll();
                 List<Monster> monsters = _monsterRepository.GetAll();
                 playerDungeons = GenerateDungeons(player, monsters, items);
+                for(int i=0;i<3;i++){
+                    _dungeonRepository.Add(playerDungeons[i]);
+                    _dungeonRepository.Commit();
+                }
             }
             DungeonsListViewModel dungeonsListViewModel = new DungeonsListViewModel(playerDungeons);
             return View("Index",dungeonsListViewModel);
         }
-
         static List<Dungeon> GenerateDungeons(Player player, List<Monster> monsters, List<Item> items){
                     List<Dungeon> dungeons = new List<Dungeon>();
                     for(int i=0;i<3;i++){
@@ -71,7 +74,9 @@ namespace App.Controllers
                             }
                             rooms.Add(new DungeonRoom(){
                                 Drops = roomLoots,
-                                Monsters = roomMonsters
+                                Monsters = roomMonsters,
+                                Completed = false,
+                                Failed = false
                             });
                         }
                         dungeons.Add(new Dungeon(){

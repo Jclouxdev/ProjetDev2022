@@ -29,5 +29,8 @@ namespace App.Data
         public void Delete(Hero hero){
             _dbContext.Remove(hero);
         }
+        public void Add(Hero hero){
+            _dbContext.Add(hero);
+        }
     }
 }
