@@ -8,6 +8,7 @@ namespace App.Data
         public DbSet<Player> Player { get; set; }
         public DbSet<Monster> Monster { get; set; }
         public DbSet<Hero> Hero { get; set; }
+        public DbSet<Spell> Spell { get; set; }
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
