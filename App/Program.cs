@@ -7,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddScoped<IRepository<Spell>, EFSpellRepository>();
 builder.Services.AddScoped<IRepository<Hero>, EFHeroRepository>();
 builder.Services.AddScoped<IRepository<Monster>, EFMonsterRepository>();
 builder.Services.AddScoped<IPlayerRepository<Player>, EFPlayerRepository>();
@@ -61,6 +62,7 @@ using (var scope = app.Services.CreateScope())
   scope.ServiceProvider.GetRequiredService<AppDbContext>().SeedHero();
   scope.ServiceProvider.GetRequiredService<AppDbContext>().SeedMonster();
   scope.ServiceProvider.GetRequiredService<AppDbContext>().SeedPlayer();
+  scope.ServiceProvider.GetRequiredService<AppDbContext>().SeedSpell();
 }
 
 app.Run();
