@@ -5,7 +5,7 @@ h1 {
 }
 
 .background {
-  z-index: -2;
+  z-index: -4;
   position: absolute;
   top: 0;
   left: 0;
@@ -19,7 +19,6 @@ h1 {
 }
 
 .screen {
-  z-index: -1;
   width: 100vw;
   height: 100vh;
   top: 0;
