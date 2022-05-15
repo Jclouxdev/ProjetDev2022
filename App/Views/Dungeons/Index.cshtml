@@ -19,7 +19,7 @@
                 <div class="dungeon-list__dungeon-card__about">
                     <h2>@Html.DisplayFor(modelItem => item.Name)</h2>
                     <p>Difficulté : @Html.DisplayFor(modelItem => item.Difficulty)</p>
-                    <a href="Id=@item.Id" class="button">Rentrer</a>
+                    <a href="dungeon/@item.Id" class="button">Rentrer</a>
                 </div>
             </div>
         }

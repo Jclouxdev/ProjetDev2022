@@ -22,18 +22,35 @@ namespace App.Controllers
 
         [HttpGet]
         [Route("[Controller]/{id}")]
-        public ActionResult DungeonPlay(int id){
-            if(id<3){
-                Player player = _playerRepository.GetByUname(User.Identity.Name);
-                List<Dungeon> dungeons = _dungeonRepository.GetAll();
-                List<Dungeon> playerDungeons = dungeons.FindAll(dungeon => dungeon.DungeonOwner == player);
-                if(playerDungeons.Count == 0){
-                    return Redirect("/dungeons");
-                }
-                DungeonViewModel dungeonModel = new DungeonViewModel(playerDungeons[id]);
-                return View("DungeonPlay", dungeonModel);
+        public ActionResult Index(int id){
+            Player player = _playerRepository.GetByUname(User.Identity.Name);
+            List<Dungeon> dungeons = _dungeonRepository.GetAll();
+            Dungeon dungeon = dungeons.Find(donj => donj.Id == id);
+            if(dungeon == null){
+                return Redirect("/dungeons");
             }
-            return Redirect("/dungeons");
+            if(player.Id != dungeon.DungeonOwner.Id){
+                return Redirect("/dungeons");
+            }
+            DungeonViewModel dungeonModel = new DungeonViewModel(dungeon);
+            return View("Index", dungeonModel);
+        }
+
+        [HttpPost]
+        [Route("[Controller]/{id}")]
+        public ActionResult DungeonPlay(int id)
+        {
+            Player player = _playerRepository.GetByUname(User.Identity.Name);
+            List<Dungeon> dungeons = _dungeonRepository.GetAll();
+            Dungeon dungeon = dungeons.Find(donj => donj.Id == id);
+            if(dungeon == null){
+                return Redirect("/dungeons");
+            }
+            if(player.Id != dungeon.DungeonOwner.Id){
+                return Redirect("/dungeons");
+            }
+            DungeonViewModel dungeonModel = new DungeonViewModel(dungeon);
+            return View("Index", dungeonModel);
         }
     }
 }
