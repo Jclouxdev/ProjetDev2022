@@ -12,5 +12,6 @@ namespace App.Models
         public string Name { get; set; }
         public int Difficulty { get; set; }
         public string BgPic {get; set;}
+        public int ActualRoomId { get; set; }
     }
 }

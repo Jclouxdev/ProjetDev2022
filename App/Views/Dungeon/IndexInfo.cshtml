@@ -1,0 +1,32 @@
+@model App.ViewModels.DungeonViewModel
+
+@{
+    ViewData["Title"] = "@Model.Dungeon.Name";
+}
+
+<div class="background">
+    <img src="@Model.Dungeon.BgPic" alt="Background">
+</div>
+<div class="text-center">
+    <h1 class="display-4">@Model.Dungeon.Name</h1>
+    <form method="post">
+        <div class="dungeon-list">
+                <div class="dungeon-list__dungeon-card">
+                    <div class="dungeon-list__dungeon-card__asset">
+                        <img src=@Model.Dungeon.BgPic>
+                    </div>
+                    <div class="dungeon-list__dungeon-card__about">
+                        <h2>@Html.DisplayFor(modelItem => Model.Dungeon.Name)</h2>
+                        <p>Difficulté : @Html.DisplayFor(modelItem => Model.Dungeon.Difficulty)</p>
+                        <input type="submit" value="Lancer" class="btn btn-primary">
+                        @if (!Model.Dungeon.Rooms[Model.Dungeon.ActualRoomId].Failed)
+                        {
+                            <p class="text-green">Bien joué, vous passez à la pièece suivante</p>
+                        } else {
+                            <p class="text-danger">Dommage vous avez perdu</p>
+                        }
+                    </div>
+                </div>
+        </div>
+    </form>
+</div>

@@ -7,5 +7,7 @@ namespace App.Models
         public List<Drop> Drops { get; set; }
         public bool Completed { get; set; }
         public bool Failed {get; set; }
+        public int RoomNumber {get; set;}
+        public Dungeon Dungeon {get; set;}
     }
 }

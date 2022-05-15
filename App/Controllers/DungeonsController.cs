@@ -76,7 +76,8 @@ namespace App.Controllers
                                 Drops = roomLoots,
                                 Monsters = roomMonsters,
                                 Completed = false,
-                                Failed = false
+                                Failed = false,
+                                RoomNumber = k
                             });
                         }
                         dungeons.Add(new Dungeon(){
@@ -88,7 +89,8 @@ namespace App.Controllers
                             Rooms = rooms,
                             Monsters = totalMonsterList,
                             Drops = totalDropList,
-                            BgPic = dungeonBg
+                            BgPic = dungeonBg,
+                            ActualRoomId = 0
                         });
             }
             return dungeons;

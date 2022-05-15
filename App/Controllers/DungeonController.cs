@@ -40,6 +40,7 @@ namespace App.Controllers
         [Route("[Controller]/{id}")]
         public ActionResult DungeonPlay(int id)
         {
+            
             Player player = _playerRepository.GetByUname(User.Identity.Name);
             List<Dungeon> dungeons = _dungeonRepository.GetAll();
             Dungeon dungeon = dungeons.Find(donj => donj.Id == id);
@@ -49,8 +50,17 @@ namespace App.Controllers
             if(player.Id != dungeon.DungeonOwner.Id){
                 return Redirect("/dungeons");
             }
+            Random rng = new Random();
+            bool pass = rng.Next(100)>30+dungeon.Difficulty*10;
+            if(pass && dungeon.Rooms[dungeon.ActualRoomId].Failed == false){
+                if (dungeon.Rooms[dungeon.ActualRoomId] != dungeon.Rooms[dungeon.Rooms.Count-1]){
+                    dungeon.Rooms[dungeon.ActualRoomId] = dungeon.Rooms[dungeon.Rooms[dungeon.ActualRoomId].RoomNumber+1];
+                }
+            } else {
+               dungeon.Rooms[dungeon.ActualRoomId].Failed = true;
+            }
             DungeonViewModel dungeonModel = new DungeonViewModel(dungeon);
-            return View("Index", dungeonModel);
+            return View("IndexInfo", dungeonModel);
         }
     }
 }
