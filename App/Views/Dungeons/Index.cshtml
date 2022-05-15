@@ -1,0 +1,25 @@
+@model App.ViewModels.DungeonsListViewModel
+
+@{
+    ViewData["Title"] = "Donjons quotidiens";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Les donjons journaliers</h1>
+
+    <div class="hero-list">
+            @foreach (var item in Model.DungeonList) {
+            <div class="hero-list__hero-card">
+                <div class="hero-list__hero-card__hero-asset">
+                    <img src=@item.BgPic>
+                </div>
+                <div class="hero-list__hero-card__hero-name">
+                    <h2>@Html.DisplayFor(modelItem => item.Name)</h2>
+                </div>
+                <div class="hero-list__hero-card__hero-role">
+                    <p>@Html.DisplayFor(modelItem => item.Difficulty)</p>
+                </div>
+            </div>
+        }
+    </div>
+</div>

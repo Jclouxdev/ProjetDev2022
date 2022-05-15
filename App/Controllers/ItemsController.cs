@@ -6,18 +6,24 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 using App.Data;
+using App.Models;
 using App.ViewModels;
 
 namespace App.Controllers
 {
     public class ItemsController : Controller
     {
+        private readonly IRepository<Item> _itemRepository;
+        public ItemsController(IRepository<Item> itemRepository){
+            _itemRepository = itemRepository;
+        }
+
         // GET: Item
         [HttpGet]
         [Route("[controller]")]
         public ActionResult Index()
         {
-            var items = ItemsRepoPattern.GetAllItems();
+            var items = _itemRepository.GetAll();
             var itemList = new ItemListViewModel(items);
 
             return View("Index", itemList);
