@@ -24,6 +24,10 @@ a {
   border-color: #1861ac;
 }
 
+.nav-item.right {
+  margin-left: auto;
+}
+
 .border-top {
   border-top: 1px solid #e5e5e5;
 }
