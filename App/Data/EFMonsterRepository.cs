@@ -25,5 +25,9 @@ namespace App.Data
         {
             return _dbContext.SaveChanges();
         }
+
+        public void Delete(Monster monster){
+            _dbContext.Remove(monster);
+        }
     }
 }

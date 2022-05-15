@@ -54,6 +54,11 @@
   color: white;
 }
 
+.form a.button.play {
+  background: #32a852;
+  color: white;
+}
+
 .form a.button.primary {
   background: #212121;
   color: white;

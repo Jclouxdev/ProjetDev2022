@@ -8,5 +8,6 @@ namespace App.Models
         public string Salt { get; set; }
         public string Email { get; set; }
         public DateTime CreationDate { get; set; }
+        public List<Dungeon> Dungeons { get; set; }
     }
 }
