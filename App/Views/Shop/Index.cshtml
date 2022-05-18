@@ -1,0 +1,14 @@
+@model App.ViewModels.ShopItemsViewModel
+
+@{
+    ViewData["Title"] = "Magasin";
+}
+
+@foreach (var item in Model.ShopItemsList) {
+  <p>
+    @Html.DisplayFor(modelItem => item.ShopItemId) -
+    @Html.DisplayFor(modelItem => item.ItemId) -
+    @Html.DisplayFor(modelItem => item.ItemPrice) PO
+  </p>
+  <br>
+}

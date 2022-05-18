@@ -228,4 +228,32 @@ public static class AppDbContextExtensions
             dbContext.SaveChanges();
         }
     }
+
+    public static void SeedShop(this AppDbContext dbContext){
+        if (!dbContext.ShopItem.Any()){
+            var shop = new List<ShopItem>()
+            {
+                new ShopItem()
+                {
+                    // public int ShopItemId { get; set; }
+                    // public int ItemId { get; set; }
+                    // public int ItemPrice { get; set; } 
+                    ItemId = 1,
+                    ItemPrice = 5000
+                },
+                new ShopItem()
+                {
+                    ItemId = 2,
+                    ItemPrice = 6000
+                },
+                new ShopItem()
+                {
+                    ItemId = 3,
+                    ItemPrice = 7500
+                },
+            };
+            dbContext.ShopItem.AddRange(shop);
+            dbContext.SaveChanges();
+        }
+    }
 }

@@ -34,6 +34,11 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Spells" asp-action="Index">Sorts</a>
                         </li>
+                        @if(User.Identity.IsAuthenticated){
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Shop" asp-action="Index">Magasin</a>
+                            </li>
+                        }
                         <div class="nav-item right">
                             <partial name="_LoginStatusPartial" />
                         </li>             

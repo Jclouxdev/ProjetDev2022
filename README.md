@@ -89,3 +89,9 @@ En premier : Mettre en place l'ORM (EntityFramework) avec la DB Docker
 - [ ] Récupérer une liste de 10 héros
 - [ ] Afficher les 10 héros sur la page de création de groupe
 - [ ] (Possiblement) Mettre en place la gestion de compte
+
+### Créer un Controller avec les Scafolding Tools
+
+On utilise la commande suivante :
+
+`dotnet aspnet-codegenerator controller -name ShopController -outDir Controllers -actions`

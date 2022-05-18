@@ -10,6 +10,7 @@ namespace App.Data
         public DbSet<Hero> Hero { get; set; }
         public DbSet<Dungeon> Dungeon { get; set;}
         public DbSet<Item> Item {get; set;}
+        public DbSet<ShopItem> ShopItem {get; set;}
         public DbSet<Drop> Drop {get; set;}
         public DbSet<Spell> Spell { get; set; }
 
