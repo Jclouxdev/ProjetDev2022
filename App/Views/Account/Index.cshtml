@@ -1,0 +1,38 @@
+@{
+    ViewData["Title"] = "Mon compte";
+}
+
+@if(User.Identity.IsAuthenticated){
+<div class="container">
+  <div class="account-informations">
+    <h2>Informations du compte</h2>
+    <hr>
+    <div class="account-informations__item">
+      <h4>Identifiant</h4>
+      <p class="lighter">@User.Identity.Name</p>
+    </div>
+    <div class="account-informations__item">
+      <h4>Adresse mail</h4>
+      <p class="lighter">Mail@mail.com</p>
+      <p><a href="#" class="">@User.Identity.Email</a></p>
+    </div>
+    <div class="account-informations__item">
+      <h4>Mot de passe</h4>
+      <p><a href="#" class="">Changer le mot de passe</a></p>
+    </div>
+    <div class="account-informations__item">
+      <h4>Date de création du compte</h4>
+      <p class="lighter">20 Juin 2021</p>
+    </div>
+    <div class="account-informations__item">
+      <p><a href="#" class="danger">Supprimer le compte</a></p>
+    </div>
+  </div>
+</div>
+}
+else
+{
+  <div class="need-connect">
+    <a href="/login">Connectez-vous pour accéder à cette page</a>
+  </div>
+}

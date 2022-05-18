@@ -1,0 +1,45 @@
+.container {
+  width: 100vw;
+  padding: 20px;
+  background: #fff;
+}
+
+.account-informations h1 {
+  font-weight: bold;
+}
+
+.account-informations h4 {
+  font-size: 1.2em;
+}
+
+.account-informations a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.account-informations a.danger {
+  color: red;
+}
+
+.account-informations p {
+  font-size: 1em;
+}
+
+.account-informations p.lighter {
+  font-weight: lighter;
+}
+
+.need-connect {
+  background: #fff;
+  margin: auto;
+  margin-top: 200px;
+  padding: 20px;
+  border-radius: 7px;
+  max-width: 400px;
+  text-align: center;
+}
+
+.need-connect a {
+  text-decoration: none;
+  color: red;
+}
