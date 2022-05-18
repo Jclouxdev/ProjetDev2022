@@ -14,13 +14,22 @@ namespace App.Controllers
 {
     public class AccountController : Microsoft.AspNetCore.Mvc.Controller
     {
+        private readonly IPlayerRepository<Player> _playerRepository;
+        public AccountController(IPlayerRepository<Player> playerRepository){
+            _playerRepository = playerRepository;
+        }
+
         [HttpGet]
         [Route("[controller]")]
         // GET: Account
         public ActionResult Index()
         {
-            System.Security.Claims.ClaimsPrincipal currentUser = this.User;
-
+            Player player = _playerRepository.GetByUname(User.Identity.Name);
+            UserProfile currentUser = new UserProfile{
+                UserName = player.Name,
+                CreationDate = player.CreationDate,
+                Email = player.Email
+            };
             return View("Index", currentUser);
         }
 

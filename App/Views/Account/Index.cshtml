@@ -1,3 +1,4 @@
+@model App.ViewModels.UserProfile
 @{
     ViewData["Title"] = "Mon compte";
 }
@@ -9,12 +10,12 @@
     <hr>
     <div class="account-informations__item">
       <h4>Identifiant</h4>
-      <p class="lighter">@User.Identity.Name</p>
+      <p class="lighter">@Model.UserName</p>
     </div>
     <div class="account-informations__item">
       <h4>Adresse mail</h4>
-      <p class="lighter">Mail@mail.com</p>
-      <p><a href="#" class="">@User.Identity.Email</a></p>
+      <p class="lighter">@Model.Email</p>
+      <p><a href="#" class="">Modifier l'email</a></p>
     </div>
     <div class="account-informations__item">
       <h4>Mot de passe</h4>
@@ -22,7 +23,7 @@
     </div>
     <div class="account-informations__item">
       <h4>Date de création du compte</h4>
-      <p class="lighter">20 Juin 2021</p>
+      <p class="lighter">@Model.CreationDate.ToShortDateString()</p>
     </div>
     <div class="account-informations__item">
       <p><a href="#" class="danger">Supprimer le compte</a></p>
