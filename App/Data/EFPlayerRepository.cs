@@ -21,6 +21,11 @@ namespace App.Data
             return _dbContext.Player.Single(r => r.Id == id);
         }
 
+        public void UpdatePlayer(Player player)
+        {
+            _dbContext.Update(player);
+        }
+
         public int Commit()
         {
             return _dbContext.SaveChanges();

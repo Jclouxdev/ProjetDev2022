@@ -15,11 +15,11 @@
     <div class="account-informations__item">
       <h4>Adresse mail</h4>
       <p class="lighter">@Model.Email</p>
-      <p><a href="#" class="">Modifier l'email</a></p>
+      <p>@Html.ActionLink("Changer l'adresse mail", "EditEmail", new { name=@Model.UserName })</p>
     </div>
     <div class="account-informations__item">
       <h4>Mot de passe</h4>
-      <p><a href="#" class="">Changer le mot de passe</a></p>
+      <p>@Html.ActionLink("Changer le mot de passe", "EditPassword", new { name=@Model.UserName })</p>
     </div>
     <div class="account-informations__item">
       <h4>Date de création du compte</h4>

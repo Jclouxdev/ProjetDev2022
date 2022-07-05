@@ -5,6 +5,7 @@ namespace App.Data
         public List<TModel> GetAll();
         public TModel GetById(int id);
         public int Commit();
+        public void UpdatePlayer(TModel model);
         public TModel Add(TModel model);
         public TModel GetByMail(string mail);
         public TModel GetByUname(string uname);

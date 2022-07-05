@@ -62,16 +62,49 @@ namespace App.Controllers
             }
         }
 
-        // GET: Account/Edit/5
-        public ActionResult Edit(int id)
+        // GET: Account/EditEmail/admin
+        [HttpGet]
+        [Route("[controller]/EditEmail/{name}")]
+        public ActionResult EditEmail(string name)
         {
-            return View();
+            return View("Edit-Email");
         }
 
-        // POST: Account/Edit/5
+        // POST: Account/Edit/Email/admin
         [HttpPost]
+        [Route("[controller]/EditEmail/{name}")]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult EditEmail(string email, IFormCollection collection)
+        {
+            try
+            {
+                // TODO: Add update logic here
+                var player = _playerRepository.GetByUname(User.Identity.Name);
+                player.Email = email;
+                _playerRepository.UpdatePlayer(player);
+                _playerRepository.Commit();
+
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View("Index");
+            }
+        }
+
+        // GET: Account/EditPassword/admin
+        [HttpGet]
+        [Route("[controller]/EditPassword/{name}")]
+        public ActionResult EditPassword(string name)
+        {
+            return View("Edit-Password");
+        }
+
+        // POST: Account/Edit/Password/admin
+        [HttpPost]
+        [Route("[controller]/EditPassword/{name}")]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditPassword(int id, IFormCollection collection)
         {
             try
             {
@@ -84,7 +117,6 @@ namespace App.Controllers
                 return View();
             }
         }
-
         // GET: Account/Delete/5
         public ActionResult Delete(int id)
         {
